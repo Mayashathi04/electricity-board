@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #1e1b4b 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background-decor {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%);
+    top: 5%;
+    right: 10%;
+    z-index: 0;
+    animation: pulseGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.15); opacity: 1; }
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #f8fafc;
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+header h1 i {
+    color: #fbbf24;
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+#connection-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    min-width: 180px;
+}
+.flex-3 { flex: 3; }
+.flex-2 { flex: 2; }
+
+#connection-form input, #connection-form select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#connection-form select option {
+    background: #0f172a;
+    color: #fff;
+}
+
+#connection-form input:focus, #connection-form select:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.25);
+}
+
+.btn-submit {
+    flex: 1.5;
+    min-width: 180px;
+    padding: 14px;
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 119, 6, 0.4);
+}
+
+.display-section h2 {
+    color: #f1f5f9;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    border-left: 4px solid #fbbf24;
+    padding-left: 10px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-header h3 {
+    color: #f8fafc;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+}
+
+.meta-tag {
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.08);
+    padding: 3px 10px;
+    border-radius: 6px;
+    color: #cbd5e1;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.card-header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.status-badge.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.suspended {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+}

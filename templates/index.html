@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Board Connection Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-decor"></div>
+    
+    <div class="dashboard-container">
+        <header>
+            <h1><i class="fa-solid fa-bolt"></i> Electricity Board</h1>
+            <p>Grid Connection Management & Allocation Console</p>
+        </header>
+
+        <section class="form-section">
+            <form id="connection-form">
+                <div class="input-group flex-3">
+                    <input type="text" id="consumer-name" placeholder="Consumer Full Name" required>
+                </div>
+                <div class="input-group flex-2">
+                    <select id="connection-type" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Domestic">Domestic (Residential)</option>
+                        <option value="Commercial">Commercial (Business)</option>
+                        <option value="Industrial">Industrial (Heavy Factory)</option>
+                    </select>
+                </div>
+                <div class="input-group flex-2">
+                    <input type="number" step="0.1" id="sanctioned-load" placeholder="Sanctioned Load (kW)" required>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fa-solid fa-plug"></i> Allocate Line</button>
+            </form>
+        </section>
+
+        <section class="display-section">
+            <h2>Active Grid Distribution Lines</h2>
+            <div id="connections-grid" class="projects-grid"></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
